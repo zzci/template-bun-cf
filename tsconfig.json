@@ -1,0 +1,3 @@
+{
+  "extends": "@template-bun-cloudflare/tsconfig/base.json"
+}

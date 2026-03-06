@@ -1,0 +1,12 @@
+{
+  "extends": "@template-bun-cloudflare/tsconfig/workers.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@template-bun-cloudflare/shared": ["../../packages/shared/src/index.ts"]
+    }
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

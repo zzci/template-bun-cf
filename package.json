@@ -1,0 +1,30 @@
+{
+  "name": "template-bun-cloudflare",
+  "private": true,
+  "type": "module",
+  "workspaces": {
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ],
+    "catalog": {
+      "typescript": "^5.9.3",
+      "zod": "^4.3.6"
+    }
+  },
+  "scripts": {
+    "dev": "bun --filter @template-bun-cloudflare/frontend dev",
+    "build": "bun --filter @template-bun-cloudflare/frontend build",
+    "deploy": "bun --filter @template-bun-cloudflare/frontend build && wrangler deploy",
+    "test": "bun --parallel --filter '*' test",
+    "lint": "biome check .",
+    "lint:fix": "biome check . --fix",
+    "format": "biome format . --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.4",
+    "@template-bun-cloudflare/tsconfig": "workspace:*",
+    "typescript": "catalog:",
+    "wrangler": "^4.71.0"
+  }
+}
