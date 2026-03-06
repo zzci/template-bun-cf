@@ -14,8 +14,10 @@
   },
   "scripts": {
     "dev": "bun --filter @template-bun-cloudflare/frontend dev",
-    "build": "bun --filter @template-bun-cloudflare/frontend build",
-    "deploy": "bun --filter @template-bun-cloudflare/frontend build && wrangler deploy",
+    "build": "bun run build:api && bun run build:frontend",
+    "build:api": "bun --filter @template-bun-cloudflare/api tsc",
+    "build:frontend": "bun --filter @template-bun-cloudflare/frontend build",
+    "deploy": "bun run build && wrangler deploy",
     "test": "bun --parallel --filter '*' test",
     "lint": "biome check .",
     "lint:fix": "biome check . --fix",
